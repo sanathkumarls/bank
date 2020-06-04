@@ -2,11 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: sanathls
- * Date: 05/05/20
- * Time: 4:37 PM
+ * Date: 04/06/20
+ * Time: 4:56 PM
  */
 
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -24,48 +26,62 @@
 
     <!-- Bootstrap core CSS-->
     <link href="../../assets/sb-admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/sb-admin/vendor/fontawesome-free/css/all.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template-->
-    <link href="../../assets/sb-admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template-->
-    <link href="../../assets/sb-admin/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
-<body class="bg-dark">
+<body class="bg-danger">
 
-<div class="container">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
-        <div class="card-body">
-            <form method="post" action="../controllers/LoginController.php">
-                <div class="form-group">
-                    <div class="form-label-group">
-                        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" autocomplete="true">
-                        <label for="inputEmail">Email address</label>
-                    </div>
+
+<div class="header bg-gradient-danger py-7 py-lg-8 mt-5">
+    <div class="container">
+        <div class="header-body text-center mb-7">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-6">
+                    <h1 class="text-white">Risk Anti Money Laundering</h1>
+                    <p class="text-lead text-light">Project on Financial and Banking Sector</p>
                 </div>
-                <div class="form-group">
-                    <div class="form-label-group">
-                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required" autocomplete="true">
-                        <label for="inputPassword">Password</label>
-                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container mt-8 pb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+            <div class="card bg-secondary shadow border-0 mt-5">
+
+                <div class="card-body px-lg-5 py-lg-5 ">
+                    <form method="post" action="../controllers/LoginController.php">
+                        <div class="form-group mb-3 mt-5">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                <input class="form-control" name="email" placeholder="Email" type="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input class="form-control" name="password" placeholder="Password" type="password" required>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-control-alternative custom-checkbox">
+                            <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                            <label class="custom-control-label" for=" customCheckLogin">
+                                <span class="text-white">Remember me</span>
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="submit" class="btn btn-primary my-4">Login</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me">
-                            Remember Password
-                        </label>
-                    </div>
-                </div>
-                <button class="btn btn-primary btn-block" name="submit" type="submit">Login</button>
-            </form>
-            <!--            <div class="text-center">-->
-            <!--                <a class="d-block small mt-3" href="register.html">Register an Account</a>-->
-            <!--                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>-->
-            <!--            </div>-->
+            </div>
         </div>
     </div>
 </div>
@@ -74,4 +90,3 @@
 </body>
 
 </html>
-

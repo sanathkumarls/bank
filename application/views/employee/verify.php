@@ -148,18 +148,15 @@ else
 </div>
 <br><br>
 <div align="center">
-    <?php
 
-    if($defaults > 0)
-        $button = "<form method='post' action='../../controllers/VerifyRefer.php'><input type='text' name='status' value='refer' hidden><button class='btn-danger' name='submit' value='".$l_app_no."'>Refer</button></form>";
-    else
-        $button = "<form method='post' action='../../controllers/VerifyRefer.php'><input type='text' name='status' value='verify' hidden><button class='btn-success' name='submit' value='".$l_app_no."'>Verify</button></form>";
-
-    echo $button;
-    ?>
+    <form method='post' action='../../controllers/VerifyRefer.php'>
+        <input type='text' name='application_no' value='<?php echo $l_app_no;?>' hidden>
+        <button class='btn-success' name='submit' value='approve'>Approve</button>
+        <button class='btn-danger' name='submit' value='reject'>Reject</button>
+        <button class='btn-primary' name='submit' value='refer'>Refer</button>
+    </form>
 </div>
 
 </body>
 
 </html>
-

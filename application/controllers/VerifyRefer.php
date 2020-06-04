@@ -8,29 +8,40 @@
 
 require_once __DIR__."/../models/Transaction.php";
 
-if(isset($_POST['submit']) && isset($_POST['status']))
+if(isset($_POST['submit']) && isset($_POST['application_no']))
 {
-    $l_app_no = $_POST['submit'];
-    $status = $_POST['status'];
+    $l_app_no = $_POST['application_no'];
+    $status = $_POST['submit'];
 
     $objVerifyRefer = new VerifyRefer();
 
-    if($status == "verify")
-        $objVerifyRefer->verify($l_app_no);
-
-    if($status == "refer")
+    if($status == "approve")
+        $objVerifyRefer->approve($l_app_no);
+    elseif($status == "refer")
         $objVerifyRefer->refer($l_app_no);
+    elseif($status == "reject")
+        $objVerifyRefer->reject($l_app_no);
 }
 
 class VerifyRefer
 {
 
-    function verify($l_app_no)
+    function approve($l_app_no)
     {
         $objTransaction = new Transaction();
         $objTransaction->createtransaction($l_app_no,"verified");
         echo "<script>
                         alert('Loan Details Verified Successfully');
+                       window.location.href='../views/employee/home.php';
+                </script>";
+    }
+
+    function reject($l_app_no)
+    {
+        $objTransaction = new Transaction();
+        $objTransaction->createtransaction($l_app_no,"rejected");
+        echo "<script>
+                        alert('Loan Rejected Successfully');
                        window.location.href='../views/employee/home.php';
                 </script>";
     }
